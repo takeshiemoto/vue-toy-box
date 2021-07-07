@@ -30,9 +30,8 @@
     "first-app": {
       "tags": []
     },
-    "first-app-e2e": {
-      "tags": [],
-      "implicitDependencies": ["first-app"]
+    "with-tsx": {
+      "tags": []
     }
   }
 }
