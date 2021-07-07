@@ -29,10 +29,10 @@ export const TaskContainer = defineComponent({
       <>
         <h2>Tasks</h2>
         <TaskList>
-          {tasks.value.map((t) => (
+          {tasks.value.map((task) => (
             <TaskListItem
-              key={t.id}
-              task={t}
+              key={task.id}
+              task={task}
               onCompleteClick={completeTask}
               onDeleteClick={deleteTask}
             />
