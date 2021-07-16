@@ -40,16 +40,12 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/first-app/**/*.{ts,tsx,vue}"
-            ]
+            "lintFilePatterns": ["apps/first-app/**/*.{ts,tsx,vue}"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/first-app"
-          ],
+          "outputs": ["coverage/apps/first-app"],
           "options": {
             "jestConfig": "apps/first-app/jest.config.js",
             "passWithNoTests": true
@@ -96,55 +92,15 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/with-tsx/**/*.{ts,tsx,vue}"
-            ]
+            "lintFilePatterns": ["apps/with-tsx/**/*.{ts,tsx,vue}"]
           }
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/with-tsx"
-          ],
+          "outputs": ["coverage/apps/with-tsx"],
           "options": {
             "jestConfig": "apps/with-tsx/jest.config.js",
             "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "nuxt-app": {
-      "projectType": "application",
-      "root": "apps/nuxt-app",
-      "targets": {
-        "build": {
-          "executor": "@nx-plus/nuxt:browser",
-          "options": {
-            "buildDir": "dist/apps/nuxt-app"
-          },
-          "configurations": {
-            "production": {}
-          }
-        },
-        "serve": {
-          "executor": "@nx-plus/nuxt:server",
-          "options": {
-            "browserTarget": "nuxt-app:build",
-            "dev": true
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "nuxt-app:build:production",
-              "dev": false
-            }
-          }
-        },
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "apps/nuxt-app/**/*.{ts,js,vue}"
-            ]
           }
         }
       }

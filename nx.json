@@ -32,9 +32,6 @@
     },
     "with-tsx": {
       "tags": []
-    },
-    "nuxt-app": {
-      "tags": []
     }
   }
 }
