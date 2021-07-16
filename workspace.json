@@ -112,6 +112,42 @@
           }
         }
       }
+    },
+    "nuxt-app": {
+      "projectType": "application",
+      "root": "apps/nuxt-app",
+      "targets": {
+        "build": {
+          "executor": "@nx-plus/nuxt:browser",
+          "options": {
+            "buildDir": "dist/apps/nuxt-app"
+          },
+          "configurations": {
+            "production": {}
+          }
+        },
+        "serve": {
+          "executor": "@nx-plus/nuxt:server",
+          "options": {
+            "browserTarget": "nuxt-app:build",
+            "dev": true
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "nuxt-app:build:production",
+              "dev": false
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/nuxt-app/**/*.{ts,js,vue}"
+            ]
+          }
+        }
+      }
     }
   },
   "cli": {
