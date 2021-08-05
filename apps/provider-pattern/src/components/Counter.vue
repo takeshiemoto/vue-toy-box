@@ -10,7 +10,7 @@
 import { defineComponent, provide } from 'vue';
 import IncrementButton from './IncrementButton.vue';
 
-import { useCounter } from '../composables/use-counter';
+import { counterKey, useCounter } from '../composables/use-counter';
 import DecrementButton from './decrementButton.vue';
 import CounterParent from './CounterParent.vue';
 
@@ -18,7 +18,7 @@ export default defineComponent({
   name: 'Counter',
   components: { CounterParent, DecrementButton, IncrementButton },
   setup() {
-    provide('counter', useCounter());
+    provide(counterKey, useCounter());
     return {};
   },
 });

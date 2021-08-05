@@ -4,12 +4,12 @@
 
 <script lang="ts">
 import { defineComponent, inject } from 'vue';
-import { CounterStore } from '../composables/use-counter';
+import { counterKey, CounterStore } from '../composables/use-counter';
 
 export default defineComponent({
   name: 'DecrementButton',
   setup() {
-    const { decrement } = inject<CounterStore>('counter');
+    const { decrement } = inject<CounterStore>(counterKey);
 
     return {
       decrement,

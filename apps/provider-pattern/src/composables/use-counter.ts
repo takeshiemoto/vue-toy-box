@@ -1,4 +1,4 @@
-import { reactive } from 'vue';
+import { InjectionKey, reactive } from 'vue';
 
 export type CounterType = { count: number };
 
@@ -22,3 +22,4 @@ export const useCounter = () => {
 };
 
 export type CounterStore = ReturnType<typeof useCounter>;
+export const counterKey: InjectionKey<CounterStore> = Symbol('counter');
