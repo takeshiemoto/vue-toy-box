@@ -30,6 +30,9 @@
     "first-app": {
       "tags": []
     },
+    "provider-pattern": {
+      "tags": []
+    },
     "with-tsx": {
       "tags": []
     }

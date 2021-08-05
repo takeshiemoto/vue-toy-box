@@ -53,6 +53,58 @@
         }
       }
     },
+    "provider-pattern": {
+      "projectType": "application",
+      "root": "apps/provider-pattern",
+      "sourceRoot": "apps/provider-pattern/src",
+      "targets": {
+        "build": {
+          "executor": "@nx-plus/vue:browser",
+          "options": {
+            "dest": "dist/apps/provider-pattern",
+            "index": "apps/provider-pattern/public/index.html",
+            "main": "apps/provider-pattern/src/main.ts",
+            "tsConfig": "apps/provider-pattern/tsconfig.app.json"
+          },
+          "configurations": {
+            "production": {
+              "mode": "production",
+              "filenameHashing": true,
+              "productionSourceMap": true,
+              "css": {
+                "extract": true,
+                "sourceMap": false
+              }
+            }
+          }
+        },
+        "serve": {
+          "executor": "@nx-plus/vue:dev-server",
+          "options": {
+            "browserTarget": "provider-pattern:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "provider-pattern:build:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/provider-pattern/**/*.{ts,tsx,vue}"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/provider-pattern"],
+          "options": {
+            "jestConfig": "apps/provider-pattern/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "with-tsx": {
       "projectType": "application",
       "root": "apps/with-tsx",
