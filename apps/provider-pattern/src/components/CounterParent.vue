@@ -17,7 +17,7 @@ export default defineComponent({
     });
 
     onUpdated(() => {
-      console.log('onUupdated');
+      console.log('onUpdate');
     });
 
     return {};
